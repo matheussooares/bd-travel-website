@@ -1,0 +1,31 @@
+-- Drop table demo;
+
+ALTER TABLE usuarios
+RENAME `Usuários`,
+MODIFY COLUMN endereco VARCHAR(150),
+MODIFY COLUMN id INT AUTO_INCREMENT,
+ADD PRIMARY KEY(id);
+
+ALTER TABle destinos
+RENAME `Destinos`,
+MODIFY COLUMN id INT AUTO_INCREMENT,
+ADD PRIMARY KEY(id);
+
+ALTER Table reservas
+RENAME `Reservas`,
+MODIFY COLUMN id INT AUTO_INCREMENT,
+ADD PRIMARY KEY(id),
+ADD CONSTRAINT fk_usuarios FOREIGN KEY (id_usuario) REFERENCES Usuários(id) ON DELETE CASCADE,
+ADD CONSTRAINT fk_destino FOREIGN KEY (id_destino) REFERENCES Destinos(id);
+
+
+
+
+
+
+
+
+
+
+
+
